@@ -8,12 +8,14 @@ const Header = ({ title }) => {
   );
 }
 
-Header.defaultProps = {
-  title: 'Task Tracker'
-}
+// commented out for avoiding defaultProps to get the result of comment below
+// Header.defaultProps = {
+//   title: 'Task Tracker'
+// }
 
+// chaining isRequired to make sure a warning is shown if the prop isn't provided
 Header.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
 }
 
 export default Header;
