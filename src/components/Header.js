@@ -7,7 +7,10 @@ const Header = ({ title }) => {
     <header className='header'>
       <h1>{title}</h1>
       {/* <Button></Button> also works*/}
-      <Button />
+      <Button color='green' text='Hello' />
+      {/* reusable Button component */}
+      <Button color='blue' text='from' />
+      <Button color='red' text='JSX' />
     </header>
   );
 }
