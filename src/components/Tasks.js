@@ -24,7 +24,9 @@ const Tasks = () => {
     <>
       {/* map() to get text for each one from [] above and output that */}
       {tasks.map((task) => (
-        <h3>{task.text}</h3>
+        // Warning: Each child in a list should have a unique "key" prop.
+        // to avoid this warning, unique "key" prop is given
+        <h3 key={task.id}>{task.text}</h3>
       ))}
     </>
   );
