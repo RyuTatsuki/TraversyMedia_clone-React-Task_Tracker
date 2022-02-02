@@ -1,24 +1,28 @@
 import PropTypes from 'prop-types';
 
-// example of reusable Button component
-const Button = ({ color, text }) => {
+// onClick props is caught up here from Header.js
+const Button = ({ color, text, onClick }) => {
   return (
-    <button style={{ backgroundColor: color }} className='btn'>
+    <button
+      // call onClick props and sent up to Header.js
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+      className='btn'
+    >
       {text}
     </button>
   );
 }
 
-// set defaultProps
 Button.defaultProps = {
   color: 'steelblue'
 }
 
-// set propTypes
-// LOWER CAMEL
 Button.propTypes = {
   text: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  // added PropType for onClick
+  onClick: PropTypes.func
 }
 
 export default Button;

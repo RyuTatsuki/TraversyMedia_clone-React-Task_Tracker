@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
-// don't forget to import created new component
 import Button from './Button';
 
 const Header = ({ title }) => {
+  // in order to make a good use of props, make function here rather than Button.js component
+  const onClick = () => {
+    console.log('Click');
+  }
+
   return (
     <header className='header'>
       <h1>{title}</h1>
-      {/* <Button></Button> also works */}
-      <Button color='green' text='Add' />
-      {/* reusable Button component */}
-      {/* <Button color='blue' text='from' /> */}
-      {/* <Button color='red' text='JSX' /> */}
+      {/* onClick as a prop */}
+      {/* embed onClick prop is gonna call onClick func above */}
+      <Button color='green' text='Add' onClick={onClick} />
     </header>
   );
 }
