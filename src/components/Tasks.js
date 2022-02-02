@@ -21,9 +21,12 @@ const tasks = [
 
 const Tasks = () => {
   return (
-    <div>
-
-    </div>
+    <>
+      {/* map() to get text for each one from [] above and output that */}
+      {tasks.map((task) => (
+        <h3>{task.text}</h3>
+      ))}
+    </>
   );
 }
 
