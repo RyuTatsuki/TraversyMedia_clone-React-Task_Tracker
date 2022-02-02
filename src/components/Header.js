@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 // don't forget to import created new component
 import Button from './Button';
 
@@ -6,11 +6,11 @@ const Header = ({ title }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      {/* <Button></Button> also works*/}
-      <Button color='green' text='Hello' />
+      {/* <Button></Button> also works */}
+      <Button color='green' text='Add' />
       {/* reusable Button component */}
-      <Button color='blue' text='from' />
-      <Button color='red' text='JSX' />
+      {/* <Button color='blue' text='from' /> */}
+      {/* <Button color='red' text='JSX' /> */}
     </header>
   );
 }
