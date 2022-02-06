@@ -1,9 +1,13 @@
-// pass in task as a prop
+// bring in FontAwesome from react-icons
+import { FaTimes } from 'react-icons/fa';
+
 const Task = ({ task }) => {
   return (
     <div className='task'>
-      {/* use of prop rather than just hard coded text */}
-      <h3>{task.text}</h3>
+      <h3>
+        {/* added delete button with inline style */}
+        {task.text} <FaTimes style={{ color: 'red', cursor: 'pointer' }} />
+      </h3>
       <p>{task.day}</p>
     </div>
   );
