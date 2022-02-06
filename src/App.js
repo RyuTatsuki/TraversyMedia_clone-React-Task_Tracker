@@ -35,7 +35,8 @@ function App() {
     <div className="container">
       <Header />
       {/* call deleteTask function as onDelete prop form Tasks */}
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      {/* show message when no tasks with ternary operator */}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'No Tasks to Show'}
     </div>
   );
 }
