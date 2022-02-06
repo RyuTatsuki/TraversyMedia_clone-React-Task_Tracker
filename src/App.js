@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
-
 function App() {
   const [tasks, setTasks] = useState([
     {
@@ -25,11 +24,16 @@ function App() {
     }
   ]);
 
+  // Delete Task
+  const deleteTask = (id) => {
+    console.log('delete', id);
+  }
 
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      {/* call deleteTask function as onDelete prop form Tasks */}
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }
