@@ -1,10 +1,12 @@
 import Task from "./Task";
 
-const Tasks = ({ tasks }) => {
+// pass in onDelete as a prop
+const Tasks = ({ tasks, onDelete }) => {
   return (
     <>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        // pass in onDelete as a prop
+        <Task key={task.id} task={task} onDelete={onDelete} />
       ))}
     </>
   );

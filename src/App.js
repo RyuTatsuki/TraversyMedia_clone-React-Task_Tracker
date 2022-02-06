@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
-
 function App() {
   const [tasks, setTasks] = useState([
     {
@@ -25,11 +24,19 @@ function App() {
     }
   ]);
 
+  // Delete Task
+  const deleteTask = (id) => {
+    // make each task actually deletable with filter()
+    // filter() is a high order array method
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
 
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} />
+      {/* call deleteTask function as onDelete prop form Tasks */}
+      {/* show message when no tasks with ternary operator */}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'No Tasks to Show'}
     </div>
   );
 }
