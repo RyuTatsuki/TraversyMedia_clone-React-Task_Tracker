@@ -26,7 +26,9 @@ function App() {
 
   // Delete Task
   const deleteTask = (id) => {
-    console.log('delete', id);
+    // make each task actually deletable with filter()
+    // filter() is a high order array method
+    setTasks(tasks.filter((task) => task.id !== id));
   }
 
   return (
