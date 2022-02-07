@@ -5,7 +5,8 @@ const Task = ({ task, onDelete, onToggle }) => {
   return (
     // onDoubleClick will call onToggle prop
     // create function in order to get id
-    <div className='task' onDoubleClick={() => onToggle(task.id)}>
+    // conditional styling with `${}` and ternary operator
+    <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick={() => onToggle(task.id)}>
       <h3>
         {task.text}
         <FaTimes
