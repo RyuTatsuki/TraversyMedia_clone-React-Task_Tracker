@@ -26,17 +26,20 @@ function App() {
 
   // Delete Task
   const deleteTask = (id) => {
-    // make each task actually deletable with filter()
-    // filter() is a high order array method
     setTasks(tasks.filter((task) => task.id !== id));
+  }
+
+  // Toggle Reminder
+  const toggleReminder = (id) => {
+    // ternary operator
+    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task));
   }
 
   return (
     <div className="container">
       <Header />
-      {/* call deleteTask function as onDelete prop form Tasks */}
-      {/* show message when no tasks with ternary operator */}
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'No Tasks to Show'}
+      {/* toggleReminder as onToggle prop */}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks to Show'}
     </div>
   );
 }
