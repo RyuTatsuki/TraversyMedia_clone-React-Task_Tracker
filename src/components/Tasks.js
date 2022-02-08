@@ -1,6 +1,5 @@
 import Task from "./Task";
 
-// catch onToggle prop
 const Tasks = ({ tasks, onDelete, onToggle }) => {
   return (
     <>
@@ -9,7 +8,6 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
           key={task.id}
           task={task}
           onDelete={onDelete}
-          // pass in the prop of onToggle
           onToggle={onToggle}
         />
       ))}
