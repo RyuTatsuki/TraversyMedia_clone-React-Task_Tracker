@@ -49,7 +49,11 @@ function App() {
     <div className="container">
       {/* toggle button is inside of Header */}
       {/* when the prop onAdd is fired off it's gonna call setShowAddTask() */}
-      <Header onAdd={() => setShowAddTask(!showAddTask)} />
+      {/* showAdd prop is gonna take showAddTask state */}
+      <Header
+        onAdd={() => setShowAddTask(!showAddTask)}
+        showAdd={showAddTask}
+      />
       {/* embedded showAddTask */}
       {/* && is a short hand for ternary operator without else */}
       {showAddTask && <AddTask onAdd={addTask} />}
