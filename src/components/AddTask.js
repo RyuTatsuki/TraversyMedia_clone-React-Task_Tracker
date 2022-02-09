@@ -1,19 +1,13 @@
-// each inputs have its own component level state (NOT app level state)
-// make this component level state controllable with useState
 import { useState } from "react";
 
-// take in onAdd prop
 const AddTask = ({ onAdd }) => {
-  // set default state of each inputs
   const [text, setText] = useState('');
   const [day, setDay] = useState('');
   const [reminder, setReminder] = useState(false);
 
-  // onSubmit function
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // validation
     if (!text) {
       alert('Please add a task');
       return;
@@ -27,7 +21,6 @@ const AddTask = ({ onAdd }) => {
   }
 
   return (
-    // pass in onSubmit
     <form className='add-form' onSubmit={onSubmit}>
       <div className='form-control'>
         <label>Task</label>
