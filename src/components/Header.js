@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import Button from './Button';
 
-const Header = ({ title }) => {
-  const onClick = () => {
-    console.log('Click');
-  }
-
+// prop onAdd is passed in
+// prop showAdd is passed in
+const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button color='green' text='Add' onClick={onClick} />
+      {/* onClick is gonna call onAdd prop */}
+      {/* made color and text dynamic with ternary operator */}
+      <Button
+        color={showAdd ? 'red' : 'green'}
+        text={showAdd ? 'Close' : 'Add'}
+        onClick={onAdd}
+      />
     </header>
   );
 }
