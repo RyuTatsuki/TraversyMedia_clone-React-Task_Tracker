@@ -4,7 +4,6 @@ import Tasks from './components/Tasks';
 import AddTask from "./components/AddTask";
 
 function App() {
-  // default state for AddTask form component, which is false
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([
     {
@@ -47,15 +46,10 @@ function App() {
 
   return (
     <div className="container">
-      {/* toggle button is inside of Header */}
-      {/* when the prop onAdd is fired off it's gonna call setShowAddTask() */}
-      {/* showAdd prop is gonna take showAddTask state */}
       <Header
         onAdd={() => setShowAddTask(!showAddTask)}
         showAdd={showAddTask}
       />
-      {/* embedded showAddTask */}
-      {/* && is a short hand for ternary operator without else */}
       {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks to Show'}
     </div>
