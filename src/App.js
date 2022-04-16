@@ -14,10 +14,8 @@ function App() {
     }
 
     getTasks();
-    // "dependency array" is empty since nothing is passed in
   }, [])
 
-  // take fetchTasks out from useEffect() since this can be used somewhere else
   // Fetch Tasks
   const fetchTasks = async () => {
     const res = await fetch('http://localhost:5000/tasks');
@@ -35,7 +33,12 @@ function App() {
   }
 
   // Delete Task
-  const deleteTask = (id) => {
+  const deleteTask = async (id) => {
+    //just use await don't need to save it in a variable since getting no data back
+    await fetch(`http://localhost:5000/tasks/${id}`, {
+      method: 'DELETE'
+    })
+
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
