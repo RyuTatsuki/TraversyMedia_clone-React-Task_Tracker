@@ -1,8 +1,4 @@
 {
-  "$comment": [
-    "tasks copied from App.js",
-    "This is how to comment on json file"
-  ],
   "tasks": [
     {
       "id": 1,
