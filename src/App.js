@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from "./components/AddTask";
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
-  // tasks are moved to db.json, result in empty array
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch('http://localhost:5000/tasks');
+      const data = await res.json();
+
+      console.log(data);
+    }
+
+    fetchTasks();
+    // "dependency array" is empty since nothing is passed in
+  }, [])
 
   // Add Task
   const addTask = (task) => {
