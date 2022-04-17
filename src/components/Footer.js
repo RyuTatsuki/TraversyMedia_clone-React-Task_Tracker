@@ -1,4 +1,3 @@
-// to prevent page reload, use Link instead of a tag
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

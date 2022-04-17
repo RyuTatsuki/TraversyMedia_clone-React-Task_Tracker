@@ -84,7 +84,6 @@ function App() {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
-        {/* react-router-dom v6 */}
         <Routes>
           <Route path='/' element={
             <>

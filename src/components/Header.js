@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// useLocation allows to look at the route currently on
 import { useLocation } from 'react-router-dom';
 import Button from './Button';
 
@@ -9,7 +8,6 @@ const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      {/* show Button if current location is '/' otherwise not */}
       {location.pathname === '/' && (
         <Button
           color={showAdd ? 'red' : 'green'}
