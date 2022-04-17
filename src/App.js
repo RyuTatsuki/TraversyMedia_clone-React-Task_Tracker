@@ -87,9 +87,9 @@ function App() {
         <Routes>
           <Route path='/' element={
             <>
-            {showAddTask && <AddTask onAdd={addTask} />}
-            {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks to Show'}
-          </>
+              {showAddTask && <AddTask onAdd={addTask} />}
+              {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks to Show'}
+            </>
           } />
           <Route path='/about' element={<About />} />
         </Routes>
